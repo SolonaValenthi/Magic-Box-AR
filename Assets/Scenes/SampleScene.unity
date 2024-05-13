@@ -291,7 +291,7 @@ MonoBehaviour:
   m_XROrigin: {fileID: 786960241}
   m_ExcludeUITouches: 1
   m_ARSessionOrigin: {fileID: 0}
-  m_PlacementPrefab: {fileID: 316736242126510432, guid: 6052cef557cac0d49a4ae5a35a51d44e,
+  m_PlacementPrefab: {fileID: 1785312895868500113, guid: ce226d29aee7c2b4da6414fa0b9d001d,
     type: 3}
   m_FallbackLayerMask:
     serializedVersion: 2
@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &756511679
 Transform:
   m_ObjectHideFlags: 0
@@ -1659,7 +1659,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1575974899
 Transform:
   m_ObjectHideFlags: 0
