@@ -2047,7 +2047,7 @@ MonoBehaviour:
   m_XROrigin: {fileID: 498011818}
   m_ExcludeUITouches: 1
   m_ARSessionOrigin: {fileID: 0}
-  m_PlacementPrefab: {fileID: 5181523654024776085, guid: 709efbfc92247094e860d972a5a35f7d,
+  m_PlacementPrefab: {fileID: 3362189255123349393, guid: 8d7708a17c090cb45af10fff375acb2a,
     type: 3}
   m_FallbackLayerMask:
     serializedVersion: 2
@@ -2295,6 +2295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d93e5c324ae99de4a9e53dee10de8965, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _placement: {fileID: 1598529028}
   _examineTarget: {fileID: 46023955}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
