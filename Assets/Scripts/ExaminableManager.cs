@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.XR.Interaction.Toolkit;
 using UnityEngine.XR.Interaction.Toolkit.AR;
 
 public class ExaminableManager : MonoBehaviour
@@ -32,12 +31,17 @@ public class ExaminableManager : MonoBehaviour
     {
         target.position = _examineTarget.position;
         target.parent = _examineTarget;
-        _lastPlaceable = _placement.placementPrefab;
-        _placement.placementPrefab = null;
+        
+        if (_placement.isActiveAndEnabled)
+        {
+            _lastPlaceable = _placement.placementPrefab;
+            _placement.placementPrefab = null;
+        }
     }
 
     public void EndExamination()
     {
-        _placement.placementPrefab = _lastPlaceable;
+        if (_placement.isActiveAndEnabled)
+            _placement.placementPrefab = _lastPlaceable;
     }
 }
