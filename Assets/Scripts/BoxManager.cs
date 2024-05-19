@@ -21,6 +21,7 @@ public class BoxManager : MonoBehaviour
     public static event OrderChecked incorrectOrder;
 
     [SerializeField] private Animator _boxAnim;
+    [SerializeField] private GameObject _winText;
     
     private int[] _correctOrder;
     private int[] _enteredOrder = { 0, 0, 0 };
@@ -63,6 +64,7 @@ public class BoxManager : MonoBehaviour
     private void OpenBox()
     {
         _boxAnim.SetTrigger("Open");
+        _winText.SetActive(true);
         correctOrder?.Invoke();
     }
 

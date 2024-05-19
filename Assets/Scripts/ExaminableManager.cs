@@ -22,6 +22,8 @@ public class ExaminableManager : MonoBehaviour
 
     private GameObject _lastPlaceable;
 
+    public bool isExamining { get; private set; } = false;
+
     void Awake()
     {
         _instance = this;
@@ -29,6 +31,7 @@ public class ExaminableManager : MonoBehaviour
 
     public void SetExamineTarget(Transform target)
     {
+        isExamining = true;
         target.position = _examineTarget.position;
         target.parent = _examineTarget;
         
@@ -41,6 +44,7 @@ public class ExaminableManager : MonoBehaviour
 
     public void EndExamination()
     {
+        isExamining = false;
         if (_placement.isActiveAndEnabled)
             _placement.placementPrefab = _lastPlaceable;
     }
