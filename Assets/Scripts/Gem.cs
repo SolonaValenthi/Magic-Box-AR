@@ -8,14 +8,25 @@ public class Gem : MonoBehaviour
     [SerializeField] private int _gemID; // 0 = red, 1 = green, 2 = blue
     [SerializeField] private ARSelectionInteractable _selection;
 
+    Material _gemMaterial;
+    Color _emissiveColor;
+
     private void OnEnable()
     {
         BoxManager.correctOrder += BoxOpened;
         BoxManager.incorrectOrder += ResetEmission;
     }
 
+    void Start()
+    {
+        _gemMaterial = GetComponent<MeshRenderer>().material;
+        _emissiveColor = _gemMaterial.GetColor("_EmissionColor");
+        ResetEmission();
+    }
+
     public void Pressed()
     {
+        _gemMaterial.SetColor("_EmissionColor", _emissiveColor);
         BoxManager.Instance.GemPressed(_gemID);
     }
 
@@ -26,7 +37,7 @@ public class Gem : MonoBehaviour
 
     private void ResetEmission()
     {
-        //reset emission here
+        _gemMaterial.SetColor("_EmissionColor", Color.black);
     }
 
     private void OnDisable()

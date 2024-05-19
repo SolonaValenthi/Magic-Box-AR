@@ -34,7 +34,7 @@ public class BoxManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _correctOrder = new int[3] { 0, 1, 2 };
+        _correctOrder = new int[3] { 2, 0, 1 };
     }
 
     public void GemPressed(int ID)
@@ -52,11 +52,12 @@ public class BoxManager : MonoBehaviour
         {
             if (_enteredOrder[i] != _correctOrder[i])
             {
+                _gemsPressed = 0;
                 ResetBox();
                 return;
             }
-            OpenBox();
         }
+        OpenBox();
     }
 
     private void OpenBox()
@@ -67,7 +68,6 @@ public class BoxManager : MonoBehaviour
 
     private void ResetBox()
     {
-        _gemsPressed = 0;
         incorrectOrder?.Invoke();
     }
 }
